@@ -9,6 +9,9 @@ const Form = () => {
   const [author, setAuthor] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!title || !author) {
+      return;
+    }
     const min = 1;
     const max = 100;
     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -24,7 +27,9 @@ const Form = () => {
       <Button
         color="#0290ff"
         text="Add"
-        Click={handleSubmit}
+        Click={
+            handleSubmit
+        }
       />
     </form>
   );
