@@ -10,6 +10,7 @@
   - [Prerequisites](#prerequisites)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -118,6 +119,12 @@ IRADUKUNDA Pacific Rugwizangoga
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- **[Mobile Version]**
+- **[Update booklist]**
+
 
 <!-- CONTRIBUTING -->
 
