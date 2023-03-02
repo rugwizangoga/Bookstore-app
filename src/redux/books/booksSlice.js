@@ -1,22 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  books: [{
-    id: '01G',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-  },
-  {
-    id: '02G',
-    title: 'The Hames',
-    author: 'Suz lins',
-  },
-  {
-    id: '03G',
-    title: 'Thames',
-    author: 'zanne Col',
-  }],
-  isLoading: false,
+  books: [],
 };
 
 const booksSlice = createSlice({
