@@ -13,14 +13,14 @@ const Books = () => {
   const books = Object.keys(booksList);
   return (
     <>
-      <ul>
+      <div className="bookbox">
         {
           // eslint-disable-next-line
           books.map((book) => <Book key={book} {...booksList[book][0]} id={book} />)
         }
-      </ul>
+      </div>
       <hr />
-      <h2 className="navigation">
+      <h2 className="AddBook">
         ADD NEW BOOK
       </h2>
       <Form />

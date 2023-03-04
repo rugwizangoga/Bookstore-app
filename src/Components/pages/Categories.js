@@ -7,10 +7,10 @@ const Categories = () => {
   const { status } = useSelector((store) => store.status);
   const dispatch = useDispatch();
   return (
-    <>
+    <div className="center">
       <Button color="#0290ff" text="Check status" Click={() => { dispatch(checkStatus()); }} />
       <h5>{status}</h5>
-    </>
+    </div>
   );
 };
 export default Categories;
