@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Button from './button';
-import { removeBook } from '../../redux/books/booksSlice';
+import { deleteBook } from '../../redux/books/booksSlice';
 
-// eslint-disable-next-line
-const Book = ({ item_id, title, author }) => {
+const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
   return (
     <li className="bookcontainer">
@@ -14,7 +13,7 @@ const Book = ({ item_id, title, author }) => {
           <h3>{title}</h3>
           <p className="author">{author}</p>
         </div>
-        <Button color="red" text="Remove" Click={() => { dispatch(removeBook(item_id)); }} />
+        <Button color="red" text="Remove" Click={() => { dispatch(deleteBook({ item_id: id })); }} />
       </div>
       <Button color="#0290ff" text="UPDATE PROGRESS" />
     </li>
@@ -24,7 +23,7 @@ const Book = ({ item_id, title, author }) => {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  item_id: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;

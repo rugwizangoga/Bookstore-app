@@ -1,16 +1,22 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBooks } from '../../redux/books/booksSlice';
 import Book from './Book';
 import Form from './Form';
 
 const Books = () => {
-  const { books } = useSelector((store) => store.books);
+  const booksList = useSelector((store) => store.books.books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
+  const books = Object.keys(booksList);
   return (
     <>
       <ul>
         {
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        books.map((book) => <Book key={book.item_id} {...book} />)
+          // eslint-disable-next-line
+          books.map((book) => <Book key={book} {...booksList[book][0]} id={book} />)
         }
       </ul>
       <hr />

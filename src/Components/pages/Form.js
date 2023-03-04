@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import Button from './button';
-import { addBook } from '../../redux/books/booksSlice';
+import { addBooks } from '../../redux/books/booksSlice';
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -12,11 +13,13 @@ const Form = () => {
     if (!title || !author) {
       return;
     }
-    const min = 1;
-    const max = 100;
-    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    const formData = { item_id: randomNum + title, title, author };
-    dispatch(addBook(formData));
+    const formData = {
+      item_id: nanoid(),
+      title,
+      author,
+      category: 'fiction',
+    };
+    dispatch(addBooks(formData));
     setTitle('');
     setAuthor('');
   };
